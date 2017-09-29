@@ -3,10 +3,12 @@ import { Component } from "@angular/core";
 @Component({
     selector: "main",
     template: `
-        <div>Message: {{message}}</div>
+        <div>Old Message: {{message}}</div>
+        <div>New Message: {{newMessage}}</div>
         <div>
             <label for="message-input">Message:</label>
-            <input type="text" id="message-input" name="messageInput" [(ngModel)]="message">
+            <input type="text" id="message-input" name="messageInput" 
+                [ngModel]="message" (ngModelChange)="newMessage = $event">
         </div>
     `,
 })
